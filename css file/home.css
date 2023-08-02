@@ -12,3 +12,12 @@ body{
     display: flex;
     justify-content: space-between;
 }
+.search-list-container{
+    display: flex ;
+    justify-content: space-evenly;
+    margin: auto;
+    width: 80%;
+    height: 100vh;
+    border-radius: 5px;
+    background-color: rgb(124, 109, 165);
+}
