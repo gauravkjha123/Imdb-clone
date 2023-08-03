@@ -22,15 +22,15 @@ function Wrapper(fn,delay) {
     let args=arguments;
        id && clearTimeout(id);
        id= setTimeout(() => {
-            fn.call(context,arguments)
+            fn.call(context,args)
         }, delay);
     }
 }
 const dibouncer=Wrapper(fetchMovies,300);
 
 function reFactorStr(str) {
-    if (str.length>25) {
-        str=str.slice(0,25)+'...';
+    if (str.length>15) {
+        str=str.slice(0,6)+'...';
         return str;
     }
     return str;
@@ -72,7 +72,8 @@ function createCard(data) {
 
 function createMoviesLists(data) {
     let searchContainer=document.getElementsByClassName('search-list-container')[0];
-    for (let index = 0; index <2; index++) {
+    searchContainer.innerHTML='';
+    for (let index = 0; index <data.length; index++) {
         let card=createCard(data[index]);
         searchContainer.append(card);
     }
