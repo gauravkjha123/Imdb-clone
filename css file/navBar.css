@@ -1,6 +1,6 @@
 .scroll{
     background-color: black;
-    border-bottom: 0.25px solid gray;
+    border-bottom: 2px solid gray;
 }
 .hover{
     transition: all ease-in-out 0.2s;
@@ -39,6 +39,7 @@
     padding-left: 5px;
     font-size: inherit;
     border-radius: 5px ;
+    text-align: center;
 }
 .favourite-container{
     text-align: end;

@@ -5,7 +5,7 @@ window.addEventListener("load",function () {
     input.addEventListener("keyup",dibouncer);
 })
 async function fetchMovies() {
-    let searchText=this.value;
+    let searchText=this?.value;
     if(!searchText){
         searchText="trending"
     }
@@ -30,15 +30,19 @@ const dibouncer=Wrapper(fetchMovies,300);
 
 function reFactorStr(str) {
     if (str.length>15) {
-        str=str.slice(0,6)+'...';
+        str=str.slice(0,10)+'...';
         return str;
     }
     return str;
+}
+function assignEvent(name,node,fn) {
+    node.addEventListener(name,fn);
 }
 
 function createCard(data) {
     let container=document.createElement('div');
     let Poster=document.createElement('img');
+    let imgNotAvailable=document.createElement('img');
     let movieDetailsContainer=document.createElement('div');
     let titleContainer=document.createElement('div');
     let title=document.createElement('p');
@@ -58,6 +62,8 @@ function createCard(data) {
     title.innerHTML= reFactorStr(data.Title);
     year.innerHTML='Year' +' '+data.Year;
     Poster.src=data.Poster;
+    imgNotAvailable.style.display='none'
+    Poster.setAttribute('alt',data.Title);
     movieDetailsBtn.innerHTML='<i class="fa-solid fa-circle-info"></i> Movie Details';
     addToFavouriteBtn.innerHTML='<i class="fa-solid fa-heart"></i> Favourite'
 
@@ -65,7 +71,12 @@ function createCard(data) {
     yearContainer.append(year);
     movieDetailsContainer.append(titleContainer,yearContainer);
     btnContainer.append(movieDetailsBtn,addToFavouriteBtn);
-    container.append(Poster,movieDetailsContainer,btnContainer);
+    container.append(Poster,imgNotAvailable,movieDetailsContainer,btnContainer);
+
+    movieDetailsBtn.addEventListener('click',function () {
+        localStorage.setItem('quary',movieDetailsBtn.innerHTML);
+        window.location.href='./'
+    })
 
     return container;
 }
@@ -73,8 +84,10 @@ function createCard(data) {
 function createMoviesLists(data) {
     let searchContainer=document.getElementsByClassName('search-list-container')[0];
     searchContainer.innerHTML='';
-    for (let index = 0; index <data.length; index++) {
+    for (let index = 0; index <data?.length; index++) {
         let card=createCard(data[index]);
         searchContainer.append(card);
     }
 }
+
+fetchMovies()

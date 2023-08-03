@@ -37,19 +37,17 @@ img{
     margin: auto;
     flex-wrap: wrap;
     width: 80%;
-    height: 100vh;
+    min-height: 100vh;
     border-radius: 5px;
     padding: 1rem;
     background-color: rgb(124, 109, 165);
-    overflow-y: scroll;
 }
 .search-list-container::-webkit-scrollbar{
     display:none;
 }
-
 .card{
     width: 200px;
-    max-height: 330px;
+    height: fit-content;
     margin: 10px;
     background-color: rgb(12, 62, 128);
     border-radius: 5px;
@@ -69,7 +67,7 @@ img{
 }
 .btn-container{
     width: 100%;
-    height: auto;
+    margin-bottom: 10px;
 
 }
 .movie-details-btn{
