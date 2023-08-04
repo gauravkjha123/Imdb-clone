@@ -1,4 +1,4 @@
-import createNaveBar from '../components/createNaveBar.js'
+import createNaveBar from '../components/naveBar.js'
 window.addEventListener("load",function () {
     document.querySelector('nav').append(createNaveBar({pageTitle:"Home"}));
     let input=document.querySelector("input");
@@ -35,12 +35,14 @@ function reFactorStr(str) {
     }
     return str;
 }
-function assignEvent(name,node,fn) {
-    node.addEventListener(name,fn);
-}
 
+function isExist(arr,imdbID) {
+   let data= arr.filter((value)=>value.imdbID===imdbID)
+    return (data.length>0)?true:false;
+}
 function createCard(data) {
     let container=document.createElement('div');
+    let imgContainer=document.createElement('div');
     let Poster=document.createElement('img');
     let imgNotAvailable=document.createElement('img');
     let movieDetailsContainer=document.createElement('div');
@@ -53,7 +55,8 @@ function createCard(data) {
     let addToFavouriteBtn=document.createElement('button');
 
     container.className='card';
-    Poster.className='card-img';
+    Poster.className='card-img'
+    imgContainer.className='card-img-conitainer';
     movieDetailsContainer.className='movie-details flex';
     btnContainer.className='btn-container';
     movieDetailsBtn.className='movie-details-btn btn';
@@ -71,13 +74,30 @@ function createCard(data) {
     yearContainer.append(year);
     movieDetailsContainer.append(titleContainer,yearContainer);
     btnContainer.append(movieDetailsBtn,addToFavouriteBtn);
-    container.append(Poster,imgNotAvailable,movieDetailsContainer,btnContainer);
+    imgContainer.append(Poster);
+    container.append(imgContainer,imgNotAvailable,movieDetailsContainer,btnContainer);
 
     movieDetailsBtn.addEventListener('click',function () {
-        localStorage.setItem('quary',movieDetailsBtn.innerHTML);
-        window.location.href='./'
+        localStorage.setItem('imdbID',data.imdbID);
+        window.location.href='./movieDetail.html'
     })
-
+    addToFavouriteBtn.addEventListener('click',function (event) {
+        let lists=localStorage.getItem('favouriteLists');
+        if (!lists) {
+                localStorage.setItem('favouriteLists',JSON.stringify([data]))
+        }else{
+            lists=JSON.parse(lists);
+            if (!isExist(lists,data.imdbID)) {
+                lists.push(data);
+                localStorage.setItem('favouriteLists',JSON.stringify(lists))
+            }else{
+                alert(`${data.Title} is already exist in favourite lists`);
+                return;
+            }
+        }
+        alert(`You have added ${data.Title} in favourite lists`)
+        event.stopPropagation();
+    })
     return container;
 }
 

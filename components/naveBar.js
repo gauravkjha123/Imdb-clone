@@ -1,9 +1,13 @@
 function addStyle() {
     let head=document.querySelector("head");
     let link=document.createElement('link');
+    let link2=document.createElement('link');
     link.rel="stylesheet";
+    link2.rel="stylesheet";
     link.href="../css file/navBar.css"
-    head.append(link);
+    link2.rel="stylesheet";
+    link2.href="../css file/loader.css"
+    head.append(link,link2);
 }
 
 export default function createNaveBar({pageTitle='Home'}) {
