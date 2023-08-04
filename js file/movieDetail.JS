@@ -1,5 +1,5 @@
 import createNaveBar from "../components/naveBar.js";
-import creatLoader from '../components/loder.js'
+import creatLoader from "../components/loder.js";
 
 window.addEventListener("load", function () {
   document.querySelector("nav").append(createNaveBar({ pageTitle: "" }));
@@ -7,10 +7,10 @@ window.addEventListener("load", function () {
 });
 
 async function fetchMovies() {
-    let mainContainer = document.getElementsByClassName(
-        "movieDetail-main-container"
-      )[0];
-    creatLoader(mainContainer,true);
+  let mainContainer = document.getElementsByClassName(
+    "movieDetail-main-container"
+  )[0];
+  creatLoader(mainContainer, true);
   let imdbID = localStorage.getItem("imdbID");
   if (!imdbID) {
     window.location.href = "./home.html";
@@ -20,7 +20,7 @@ async function fetchMovies() {
       `http://www.omdbapi.com/?i=${imdbID}&apikey=54335d88&page=1&type=movie&plot=full`
     );
     const data = await res.json();
-    creatLoader(mainContainer,false);
+    creatLoader(mainContainer, false);
     createMovieDetails(data);
     return data;
   } catch (error) {

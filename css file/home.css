@@ -1,90 +1,90 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    background-color:  #171717;
-    color: white;
-}
-
-img{
-    width: 100%;
-    background-position: center;
-    background-size: cover;
-}
-.btn{
-    display: block;
-    width: 80%;
-    height: 32px;
-    margin: auto;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    border-radius: 5px;
-    outline: none;
-    text-align: center;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
+body {
+  background-color: #171717;
+  color: white;
 }
 
-.flex{
-    display: flex;
-    justify-content: space-between;
+img {
+  width: 100%;
+  background-position: center;
+  background-size: cover;
 }
-.search-list-container{
-    justify-content: space-evenly !important;
-    margin: auto;
-    flex-wrap: wrap;
-    width: 80%;
-    min-height: 100vh;
-    border-radius: 5px;
-    padding: 1rem;
-    background-color: black;
+.btn {
+  display: block;
+  width: 80%;
+  height: 32px;
+  margin: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  outline: none;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
 }
-.search-list-container::-webkit-scrollbar{
-    display:none;
-}
-.card{
-    width: 200px;
-    height: fit-content;
-    margin: 10px;
-    background-color: rgb(12, 62, 128);
-    border-radius: 5px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
-    transition: all 0.3s;
-}
-.card:hover{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.7);
-}
-.card-img{
-    height: 200px;
-}
-.card-img-conitainer{
-    height: 200px;
-    overflow: hidden;
-}
-.movie-details{
-    padding: 5px;
-    padding-top: 10px;
-    font-size: 1rem;
-}
-.btn-container{
-    width: 100%;
-    margin-bottom: 10px;
 
+.flex {
+  display: flex;
+  justify-content: space-between;
 }
-.movie-details-btn{
-    transition: all ease-in-out 0.3s;
+.search-list-container {
+  justify-content: space-evenly !important;
+  margin: auto;
+  flex-wrap: wrap;
+  width: 80%;
+  min-height: 100vh;
+  align-items: center;
+  border-radius: 5px;
+  padding: 1rem;
+  background-color: black;
 }
-.favourite-btn{
-    transition: all ease-in-out 0.3s;
+.search-list-container::-webkit-scrollbar {
+  display: none;
 }
-.movie-details-btn:hover{
-    background-color: gray;
-    color: white;
+.card {
+  width: 200px;
+  height: fit-content;
+  margin: 10px;
+  background-color: rgb(12, 62, 128);
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+  transition: all 0.3s;
 }
-.favourite-btn:hover{
-    background-color: gray;
-    color: white;
+.card:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.7);
+}
+.card-img {
+  height: 200px;
+}
+.card-img-conitainer {
+  height: 200px;
+  overflow: hidden;
+}
+.movie-details {
+  padding: 5px;
+  padding-top: 10px;
+  font-size: 1rem;
+}
+.btn-container {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.movie-details-btn {
+  transition: all ease-in-out 0.3s;
+}
+.favourite-btn {
+  transition: all ease-in-out 0.3s;
+}
+.movie-details-btn:hover {
+  background-color: gray;
+  color: white;
+}
+.favourite-btn:hover {
+  background-color: gray;
+  color: white;
 }

@@ -29,7 +29,7 @@ img {
   min-height: 100vh;
   border-radius: 5px;
   padding: 1rem;
-  background-color: black;;
+  background-color: black;
 }
 
 .movieDetail-main-container::-webkit-scrollbar {
