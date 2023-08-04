@@ -78,27 +78,32 @@ function createCard(data) {
   return container;
 }
 
-function createMoviesLists(data) {
-  let searchContainer = document.getElementsByClassName(
-    "favourite-main-container"
-  )[0];
+function createMoviesLists(data, searchContainer) {
   searchContainer.innerHTML = "";
   for (let index = 0; index < data?.length; index++) {
     let card = createCard(data[index]);
     searchContainer.append(card);
   }
 }
+function addNoMovieText(target) {
+  let textContainer = document.createElement("p");
+  textContainer.innerHTML = `You haven't added any movie in favourite list.`;
+  textContainer.classList.add('no-movies-text');
+  target.append(textContainer);
+}
 
 function fetchFavouriteLIists() {
-  let noMovieText = document.getElementsByClassName("no-movies-text")[0];
+  let searchContainer = document.getElementsByClassName(
+    "favourite-main-container"
+  )[0];
   let lists = localStorage.getItem("favouriteLists");
   lists = JSON.parse(lists);
   if (!lists || !Array.isArray(lists) || lists.length === 0) {
-    noMovieText.style.display = "block";
+    createMoviesLists([], searchContainer);
+    addNoMovieText(searchContainer);
     return;
   }
-  noMovieText.style.display = "none";
-  createMoviesLists(lists);
+  createMoviesLists(lists,searchContainer);
 }
 
 fetchFavouriteLIists();
