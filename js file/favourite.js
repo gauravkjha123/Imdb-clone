@@ -52,7 +52,7 @@ function createCard(data) {
   Poster.setAttribute("alt", data.Title);
   movieDetailsBtn.innerHTML =
     '<i class="fa-solid fa-circle-info"></i> Movie Details';
-  removeBtn.innerHTML = '<i class="fa-solid fa-heart"></i> Remove';
+  removeBtn.innerHTML = '<i class="fa-solid fa-trash"></i> Remove';
 
   titleContainer.append(title);
   yearContainer.append(year);

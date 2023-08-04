@@ -110,7 +110,6 @@ function createCard(data) {
       }
     }
     alert(`You have added ${data.Title} in favourite lists`);
-    event.stopPropagation();
   });
   return container;
 }
