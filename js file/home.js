@@ -115,7 +115,7 @@ function createCard(data) {
 }
 
 function createMoviesLists(data, target) {
-  creatLoader(target, true);
+  creatLoader(target, false);
   target.innerHTML = "";
   for (let index = 0; index < data?.length; index++) {
     let card = createCard(data[index]);
