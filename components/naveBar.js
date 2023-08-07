@@ -4,9 +4,9 @@ function addStyle() {
   let link2 = document.createElement("link");
   link.rel = "stylesheet";
   link2.rel = "stylesheet";
-  link.href = "../css file/navBar.css";
+  link.href = "../css/navBar.css";
   link2.rel = "stylesheet";
-  link2.href = "../css file/loader.css";
+  link2.href = "../css/loader.css";
   head.append(link, link2);
 }
 
