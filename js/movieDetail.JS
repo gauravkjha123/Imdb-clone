@@ -13,7 +13,7 @@ async function fetchMovies() {
   creatLoader(mainContainer, true);
   let imdbID = localStorage.getItem("imdbID");
   if (!imdbID) {
-    window.location.href = "./home.html";
+    window.location.href = "./index.html";
   }
   try {
     const res = await fetch(
@@ -24,13 +24,13 @@ async function fetchMovies() {
     createMovieDetails(data);
     return data;
   } catch (error) {
-    window.location.href = "./home.html";
+    window.location.href = "./index.html";
   }
 }
 
 function createMovieDetails(data) {
   if (!data) {
-    window.location.href = "./home.html";
+    window.location.href = "./index.html";
   }
   let mainContainer = document.getElementsByClassName(
     "movieDetail-main-container"

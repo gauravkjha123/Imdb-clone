@@ -53,7 +53,7 @@ export default function createNaveBar({ pageTitle = "Home" }) {
     let homeText = document.querySelector(".home-container>span").innerHTML;
     let titleText = document.querySelector("title").innerHTML;
     if (homeText !== titleText) {
-      window.location.href = "../html file/index.html";
+      window.location.href = "../html/index.html";
     }
     return;
   });
@@ -63,7 +63,7 @@ export default function createNaveBar({ pageTitle = "Home" }) {
     ).innerHTML;
     let titleText = document.querySelector("title").innerHTML;
     if (favouriteText !== titleText) {
-      window.location.href = "../html file/favourite.html";
+      window.location.href = "../html/favourite.html";
     }
     return;
   });
