@@ -17,7 +17,7 @@ async function fetchMovies() {
   }
   try {
     const res = await fetch(
-      `http://www.omdbapi.com/?i=${imdbID}&apikey=54335d88&page=1&type=movie&plot=full`
+      `https://www.omdbapi.com/?i=${imdbID}&apikey=54335d88&page=1&type=movie&plot=full`
     );
     const data = await res.json();
     creatLoader(mainContainer, false);
