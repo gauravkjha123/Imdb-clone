@@ -4,9 +4,9 @@ function addStyle() {
   let link2 = document.createElement("link");
   link.rel = "stylesheet";
   link2.rel = "stylesheet";
-  link.href = "../css/navBar.css";
+  link.href = "./css/navBar.css";
   link2.rel = "stylesheet";
-  link2.href = "../css/loader.css";
+  link2.href = "./css/loader.css";
   head.append(link, link2);
 }
 
@@ -53,7 +53,7 @@ export default function createNaveBar({ pageTitle = "Home" }) {
     let homeText = document.querySelector(".home-container>span").innerHTML;
     let titleText = document.querySelector("title").innerHTML;
     if (homeText !== titleText) {
-      window.location.href = "../html/index.html";
+      window.location.href = "./index.html";
     }
     return;
   });
@@ -63,7 +63,7 @@ export default function createNaveBar({ pageTitle = "Home" }) {
     ).innerHTML;
     let titleText = document.querySelector("title").innerHTML;
     if (favouriteText !== titleText) {
-      window.location.href = "../html/favourite.html";
+      window.location.href = "./favourite.html";
     }
     return;
   });
