@@ -16,7 +16,7 @@ async function fetchMovies() {
     searchText = "trending";
   }
   const res = await fetch(
-    `http://www.omdbapi.com/?s=${searchText}&apikey=54335d88&page=1`
+    `https://www.omdbapi.com/?s=${searchText}&apikey=54335d88&page=1`
   );
   const data = await res.json();
   createMoviesLists(data.Search, searchContainer);
